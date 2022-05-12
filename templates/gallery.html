@@ -1,0 +1,129 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<!-- content begin -->
+<div class="no-bottom no-top" id="content">
+	<div id="top"></div>
+
+	<!-- section begin -->
+	<section id="subheader" data-bgimage="url({% static 'images/background/5.png' %}) bottom">
+		<div class="center-y relative text-center" data-scroll-speed="4">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<form action='blank.php' class="row" id='form_subscribe' method="post" name="myForm">
+							<div class="col-md-12 text-center">
+								<h1>Gallery</h1>
+								<p>Awsome Page Teaser Here</p>
+							</div>
+							<div class="clearfix"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- section close -->
+
+
+	<section class="no-top pos-top relative">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-4 mb30">
+					<div class="de-image-hover rounded">
+						<a href="{% static 'images/gallery/1.jpg' %}" class="image-popup">
+							<span class="dih-title-wrap">
+								<span class="dih-title">Gallery Title</span>
+							</span>
+							<span class="dih-overlay"></span>
+							<img src="{% static 'images/gallery/1.jpg' %}" class="img-fluid" alt="">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-4 mb30">
+					<div class="de-image-hover rounded">
+						<a href="{% static 'images/gallery/2.jpg' %}" class="image-popup">
+							<span class="dih-title-wrap">
+								<span class="dih-title">Gallery Title</span>
+							</span>
+							<span class="dih-overlay"></span>
+							<img src="{% static 'images/gallery/2.jpg' %}" class="img-fluid" alt="">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-4 mb30">
+					<div class="de-image-hover rounded">
+						<a href="{% static 'images/gallery/3.jpg' %}" class="image-popup">
+							<span class="dih-title-wrap">
+								<span class="dih-title">Gallery Title</span>
+							</span>
+							<span class="dih-overlay"></span>
+							<img src="{% static 'images/gallery/3.jpg' %}" class="img-fluid" alt="">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-4 mb30">
+					<div class="de-image-hover rounded">
+						<a href="{% static 'images/gallery/4.jpg' %}" class="image-popup">
+							<span class="dih-title-wrap">
+								<span class="dih-title">Gallery Title</span>
+							</span>
+							<span class="dih-overlay"></span>
+							<img src="{% static 'images/gallery/4.jpg' %}" class="img-fluid" alt="">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-4 mb30">
+					<div class="de-image-hover rounded">
+						<a href="{% static 'images/gallery/5.jpg' %}" class="image-popup">
+							<span class="dih-title-wrap">
+								<span class="dih-title">Gallery Title</span>
+							</span>
+							<span class="dih-overlay"></span>
+							<img src="{% static 'images/gallery/5.jpg' %}" class="img-fluid" alt="">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-4 mb30">
+					<div class="de-image-hover rounded">
+						<a href="{% static 'images/gallery/6.jpg' %}" class="image-popup">
+							<span class="dih-title-wrap">
+								<span class="dih-title">Gallery Title</span>
+							</span>
+							<span class="dih-overlay"></span>
+							<img src="{% static 'images/gallery/6.jpg' %}" class="img-fluid" alt="">
+						</a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<section class="pt60 pb60 bg-color-2 text-light">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-8 mb-sm-30 text-lg-left text-sm-center">
+					<h3 class="no-bottom">Awesomeness begin here. Are you ready?</h3>
+				</div>
+
+				<div class="col-md-4 text-lg-right text-sm-center">
+					<a href="#" class="btn-custom capsule med">Let's do it!</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
+<!-- content close -->
+
+{% endblock content %}

@@ -1,0 +1,92 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<!-- content begin -->
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+
+    <!-- section begin -->
+    <section id="subheader" data-bgimage="url({% static 'images/background/5.png; %}) bottom">
+        <div class="center-y relative text-center" data-scroll-speed="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <form action='blank.php' class="row" id='form_subscribe' method="post" name="myForm">
+                            <div class="col-md-12 text-center">
+                                <h1>User Login</h1>
+                                <p>Awsome Page Teaser Here</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section close -->
+
+
+    <section class="no-top" data-bgimage="url({% static 'images/background/3.png' %}) top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <form name="contactForm" id='contact_form' class="form-border" method="post" action='blank.php'>
+                        <h3>Login to your account</h3>
+
+                        <div class="field-set">
+                            <label>Username</label>
+                            <input type='text' name='name' id='name' class="form-control" placeholder="">
+                        </div>
+
+
+                        <div class="field-set">
+                            <label>Password</label>
+                            <input type='text' name='email' id='email' class="form-control" placeholder="">
+                        </div>
+
+                        <div id='submit' class="pull-left">
+                            <input type='submit' id='send_message' value='Login' class="btn btn-custom color-2">
+
+                            <div id='mail_success' class='success'>Your message has been sent successfully.</div>
+                            <div id='mail_fail' class='error'>Sorry, error occured this time sending your message.
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="spacer-single"></div>
+
+                            <!-- social icons -->
+                            <ul class="list s3">
+                                <li>Or login with:</li>
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Google</a></li>
+                                <li><a href="#">Instagram</a></li>
+                            </ul>
+                            <!-- social icons close -->
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pt60 pb60 bg-color-2 text-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8 mb-sm-30 text-lg-left text-sm-center">
+                    <h3 class="no-bottom">Awesomeness begin here. Are you ready?</h3>
+                </div>
+
+                <div class="col-md-4 text-lg-right text-sm-center">
+                    <a href="#" class="btn-custom capsule med">Let's do it!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!-- content close -->
+
+{% endblock content %}
