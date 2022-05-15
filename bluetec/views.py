@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from .forms import GetStartedForm
 from django.contrib import messages
 from django.core.mail import send_mail 
+from .models import TechnologiesIcons
 
 
 def home(request):
@@ -23,6 +24,7 @@ def career(request):
     return render(request, 'bluetec/career.html', context)
 
 def service(request):
+    technologies = TechnologiesIcons.objects.all()
     form = GetStartedForm()
     if request.method == 'POST':
         form = GetStartedForm(request.POST)
@@ -40,7 +42,7 @@ def service(request):
             messages.info(request, 'Thanks ' + client_name + '! We have recieved your email and will contact you shortly..')
             context = {'form': form, 'client_name': client_name}
             return redirect('home')
-    context = {'form': form}
+    context = {'form': form, 'technologies': technologies}
     return render(request, 'bluetec/service.html', context)
 
 

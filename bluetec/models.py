@@ -43,7 +43,7 @@ class WhatDoWeOffer(models.Model):
 
 class ServiceCard(models.Model):
     card_heading = models.CharField(max_length=300, null=True, blank=True)
-    card_pic = models.ImageField( null=True, blank=True)
+    card_pic = models.ImageField(null=True, blank=True, upload_to='services')
     card_detail = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self):
@@ -90,10 +90,10 @@ class DataSecuritySection(models.Model):
         verbose_name_plural = 'Data Security Section (SERVICE PAGE)'
 
 class TechnologiesIcons(models.Model):
-    icons = models.ImageField(null=True, blank=True)
+    icons = models.ImageField(null=True, blank=True, upload_to='services')
 
     def __str__(self):
-        return self.icons
+        return str(self.icons)
 
     class Meta:
         verbose_name = 'Technologies icon (SERVICE PAGE)'
