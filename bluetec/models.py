@@ -140,6 +140,7 @@ class CompanyStat(models.Model):
 
 #  HOME PAGE
 class HomePageFront(models.Model):
+    top_heading = models.CharField(max_length=300, null=True, blank=True) 
     front_data = models.CharField(max_length=300, null=True, blank=True)
     sub_detail = models.CharField(max_length=300, null=True, blank=True)
 
@@ -190,7 +191,7 @@ class WhatMakeUsDifferent1(models.Model):
         verbose_name_plural = 'What makes us different (first) (ABOUT US PAGE)'
 
 class TopTeamMembers(models.Model):
-    member_pic = models.ImageField()
+    member_pic = models.ImageField(upload_to = 'team_member')
     member_name = models.CharField(max_length=300, null=True, blank=True)
     member_role = models.CharField(max_length=300, null=True, blank=True)
     gmail = models.CharField(max_length=300, null=True, blank=True)
@@ -232,6 +233,8 @@ class LetsDoIt(models.Model):
         verbose_name = 'Contact us section (ABOUT US PAGE)'
         verbose_name_plural = 'Contact us section (ABOUT US PAGE)'
 
+
+
 #  TEAM PAGE
 class OurTeamIntro(models.Model):
     intro = models.CharField(max_length=300, null=True, blank=True)
@@ -243,22 +246,6 @@ class OurTeamIntro(models.Model):
         verbose_name = 'Our Team Introduction (TEAM PAGE)'
         verbose_name_plural = 'Our Team Introduction (TEAM PAGE)'
 
-class MembersDetailnPic(models.Model):
-    member_pic = models.ImageField()
-    member_name = models.CharField(max_length=300, null=True, blank=True)
-    member_role = models.CharField(max_length=300, null=True, blank=True)
-    gmail = models.CharField(max_length=300, null=True, blank=True)
-    facebook = models.CharField(max_length=300, null=True, blank=True)
-    twitter = models.CharField(max_length=300, null=True, blank=True)
-    linkdin = models.CharField(max_length=300, null=True, blank=True)
-
-    def __str__(self):
-        return self.member_name
-
-
-    class Meta:
-        verbose_name = 'Team Members details and pictures (TEAM PAGE)'
-        verbose_name_plural = 'Team Members details and pictures (TEAM PAGE)'
 
 #  FOOTER DATA
 class FooterData(models.Model):
@@ -271,3 +258,28 @@ class FooterData(models.Model):
     class Meta:
         verbose_name = 'Footer Section (FOOTER PAGE)'
         verbose_name_plural = 'Footer Section (FOOTER PAGE)'
+
+
+# CAREER PAGE
+
+class CareerIntro(models.Model):
+    intro = models.CharField(max_length=300, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.intro)    
+    
+    class Meta:
+        verbose_name = 'Career Intro Section (Career PAGE)'
+        verbose_name_plural = 'Career Intro Section (Career PAGE)'
+
+
+class CareerDesc(models.Model):
+    heading = models.CharField(max_length=300, null=True, blank=True)
+    description = models.CharField(max_length=300, null=True, blank=True)
+    
+    def __str__(self):
+        return str(self.heading)    
+    
+    class Meta:
+        verbose_name = 'Career selection Section (Career PAGE)'
+        verbose_name_plural = 'Career selection Section (Career PAGE)'

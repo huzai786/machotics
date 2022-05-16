@@ -20,8 +20,10 @@ TopTeamMembers,
 WhatMakeUsDifferent2,
 LetsDoIt,
 OurTeamIntro,
-MembersDetailnPic,
 FooterData,
+CareerIntro,
+CareerDesc
+
 )
 
 admin.site.register(GetStarted)
@@ -42,10 +44,15 @@ admin.site.register(TopTeamMembers)
 admin.site.register(WhatMakeUsDifferent2)
 admin.site.register(OurTeamIntro)
 admin.site.register(LetsDoIt)
-admin.site.register(MembersDetailnPic)
 admin.site.register(FooterData)
 admin.site.unregister(Group)
 admin.site.unregister(User)
+admin.site.register(CareerDesc)
+admin.site.register(CareerIntro)
+
+
+
+
 
 admin.site.site_header = 'Machotics CMS'                    
 admin.site.index_title = 'Content Management System for Machotics'                
