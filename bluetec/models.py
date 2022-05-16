@@ -1,5 +1,14 @@
 from django.db import models
 
+our_work_slid_choices = (
+    ('fa fa-laptop', 'laptop'),
+    ('fa fa-paper-plane-o', 'paper plane'),
+    ('fa fa-line-chart', 'line chart'),
+    ('fa fa-object-group', 'visual box'),
+    ('fa fa-hdd-o', 'hard drive'),
+    ('fa fa-comments-o', 'comment'),
+)
+
 #  SERVICE PAGE
 
 class GetStarted(models.Model):
@@ -19,6 +28,7 @@ class OurServiceFront(models.Model):
     heading = models.CharField(max_length=300, null=True, blank=True)
     sub_heading = models.CharField(max_length=300, null=True, blank=True)
     short_detail = models.CharField(max_length=300, null=True, blank=True)
+
 
     def __str__(self):
         return self.heading
@@ -45,6 +55,8 @@ class ServiceCard(models.Model):
     card_heading = models.CharField(max_length=300, null=True, blank=True)
     card_pic = models.ImageField(null=True, blank=True, upload_to='services')
     card_detail = models.CharField(max_length=300, null=True, blank=True)
+    card_class = models.CharField(max_length=300, null=True, blank=True, choices = our_work_slid_choices)
+
 
     def __str__(self):
         return self.card_heading
@@ -68,6 +80,7 @@ class HowDoWeWork(models.Model):
 class OurWorkSlide(models.Model):
     card_heading = models.CharField(max_length=300, null=True, blank=True)
     card_detail = models.CharField(max_length=300, null=True, blank=True)
+    card_class = models.CharField(max_length=300, null=True, blank=True, choices = our_work_slid_choices)
 
 
     def __str__(self):
@@ -90,7 +103,7 @@ class DataSecuritySection(models.Model):
         verbose_name_plural = 'Data Security Section (SERVICE PAGE)'
 
 class TechnologiesIcons(models.Model):
-    icons = models.ImageField(null=True, blank=True, upload_to='services')
+    icons = models.ImageField(null=True, blank=True, upload_to='technologies/')
 
     def __str__(self):
         return str(self.icons)
@@ -106,7 +119,7 @@ class Testimonials(models.Model):
     name = models.CharField(max_length=300, null=True, blank=True)
 
     def __str__(self):
-        return self.testimonial
+        return self.name
 
     class Meta:
         verbose_name = 'Testimonials section (SERVICE PAGE)'
@@ -116,6 +129,7 @@ class Testimonials(models.Model):
 class CompanyStat(models.Model):
     achievement_name = models.CharField(max_length=300, null=True, blank=True)
     max_num_to_reach = models.IntegerField(default=0)
+    data_speed = models.CharField('data_speed in seconds', max_length=300, null=True, blank=True)
 
     def __str__(self):
         return self.achievement_name
@@ -252,7 +266,7 @@ class FooterData(models.Model):
     copy_right = models.CharField(max_length=300, null=True, blank=True) 
 
     def __str__(self):
-        return self.footer_data
+        return str(self.footer_data[:50])
 
     class Meta:
         verbose_name = 'Footer Section (FOOTER PAGE)'

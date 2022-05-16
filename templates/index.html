@@ -123,7 +123,7 @@
                             <div class="widget">                
                                 <a href="{% url 'home' %}"> {% block footer_link %} <img alt="" class="logo" src="{% static 'images/logo-1.png' %}">{% endblock footer_link %}</a>
                                 <div class="spacer-20"></div>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.</p>
+                                <p>{{ Footer.footer_data }}</p>
                             </div>
                         </div>
 						
@@ -171,7 +171,7 @@
 
                     <div class="row">
                         <div class="col-md-6 sm-text-center mb-sm-30">
-                            <div class="mt10">&copy; Copyright 2020 - Bluetec by Designesia</div>
+                            <div class="mt10"> {{ Footer.copy_right }}</div>
                         </div>
 
                         <div class="col-md-6 text-md-right text-sm-left">
